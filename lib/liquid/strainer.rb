@@ -5,7 +5,7 @@ module Liquid
   #
   # One of the strainer's responsibilities is to keep malicious method calls out 
   class Strainer
-    @@required_methods = ["__send__", "__id__", "respond_to?", "extend", "methods"]
+    @@required_methods = [:__send__, :__id__, :object_id, :respond_to?, :extend, :methods]
     
     @@filters = []
     

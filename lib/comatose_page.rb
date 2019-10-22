@@ -92,7 +92,7 @@ class ComatosePage < ActiveRecord::Base
   def self.find_by_path( path )
      path = path.split('.')[0] unless path.empty? # Will ignore file extension...
      path = path[1..-1] if path.starts_with? "/"
-     find( :first, :conditions=>[ 'full_path = ?', path ] )
+     where(:full_path => path).first
   end
 
 # Overrides...
